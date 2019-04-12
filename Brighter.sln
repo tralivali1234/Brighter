@@ -143,13 +143,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreetingsServer", "samples\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AWSTaskQueueExamples", "AWSTaskQueueExamples", "{033A8626-4BD0-40B7-9A04-5E278BEB9FD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greetings", "samples\AWSTaskQueueSamples\Greetings\Greetings.csproj", "{6E9F8C61-7F0E-4CA1-9602-EA8B85E3CF03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greetings", "samples\AWSTaskQueueSamples\Greetings\Greetings.csproj", "{6E9F8C61-7F0E-4CA1-9602-EA8B85E3CF03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingsReceiverConsole", "samples\AWSTaskQueueSamples\GreetingsReceiverConsole\GreetingsReceiverConsole.csproj", "{DE96C916-44F8-4634-BC6D-67678C224931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreetingsReceiverConsole", "samples\AWSTaskQueueSamples\GreetingsReceiverConsole\GreetingsReceiverConsole.csproj", "{DE96C916-44F8-4634-BC6D-67678C224931}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingsSender", "samples\AWSTaskQueueSamples\GreetingsSender\GreetingsSender.csproj", "{9F0A56E6-292E-4613-AD0C-92495C50BEDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreetingsSender", "samples\AWSTaskQueueSamples\GreetingsSender\GreetingsSender.csproj", "{9F0A56E6-292E-4613-AD0C-92495C50BEDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingsPumper", "samples\AWSTaskQueueSamples\GreetingsPumper\GreetingsPumper.csproj", "{396D88BA-4BF3-4521-8017-D6EEF3D96337}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreetingsPumper", "samples\AWSTaskQueueSamples\GreetingsPumper\GreetingsPumper.csproj", "{396D88BA-4BF3-4521-8017-D6EEF3D96337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paramore.Brighter.Perf", "Paramore.Brighter.Perf\Paramore.Brighter.Perf.csproj", "{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -713,6 +715,18 @@ Global
 		{396D88BA-4BF3-4521-8017-D6EEF3D96337}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{396D88BA-4BF3-4521-8017-D6EEF3D96337}.Release|x86.ActiveCfg = Release|Any CPU
 		{396D88BA-4BF3-4521-8017-D6EEF3D96337}.Release|x86.Build.0 = Release|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Debug|x86.Build.0 = Debug|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Release|x86.ActiveCfg = Release|Any CPU
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -756,6 +770,7 @@ Global
 		{DE96C916-44F8-4634-BC6D-67678C224931} = {033A8626-4BD0-40B7-9A04-5E278BEB9FD6}
 		{9F0A56E6-292E-4613-AD0C-92495C50BEDD} = {033A8626-4BD0-40B7-9A04-5E278BEB9FD6}
 		{396D88BA-4BF3-4521-8017-D6EEF3D96337} = {033A8626-4BD0-40B7-9A04-5E278BEB9FD6}
+		{5C1D0E64-4E7D-4699-BD80-3C21D8E434EB} = {329736D2-BF92-4D06-A7BF-19F4B6B64EDD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B7C7E31-2E32-4E0D-9426-BC9AF22E9F4C}
