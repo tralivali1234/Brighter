@@ -58,19 +58,19 @@ steps:
     # arguments: '-v normal --configuration $(buildConfiguration) --no-build --filter "Category=AWS|Category=Sqlite"'
     # testRunTitle: 'AWS & Sqlite tests running on ubuntu'
    
-- task: DockerCompose@0
-  displayName: Run services for tests
-  timeoutInMinutes: 5
-  inputs:
-    containerregistrytype: 'Azure Container Registry'
-    dockerComposeFile: 'docker-compose.yaml'
-    action: 'Run services'
+# - task: DockerCompose@0
+#   displayName: Run services for tests
+#   timeoutInMinutes: 5
+#   inputs:
+#     containerregistrytype: 'Azure Container Registry'
+#     dockerComposeFile: 'docker-compose.yaml'
+#     action: 'Run services'
 
-- script: sleep 60
-  displayName: sleep 60
+# - script: sleep 60
+#   displayName: sleep 60
 
-- script: docker ps
-  displayName: docker ps
+# - script: docker ps
+#   displayName: docker ps
 
 # - task: DotNetCoreCLI@2
 #   displayName: 'Tests that need docker infrastructure dotnet test $(buildConfiguration)'
