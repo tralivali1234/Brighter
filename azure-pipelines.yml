@@ -47,6 +47,8 @@ steps:
       $xml.Project.PropertyGroup.InformationalVersion = $(Version.SemVer)
       $xml.Project.PropertyGroup.Version = $(Version.SemVer)
       $xml.Save("src\Directory.Build.props")
+
+      cat src\Directory.Build.props
     pwsh: true
 
 - task: DotNetCoreCLI@2
