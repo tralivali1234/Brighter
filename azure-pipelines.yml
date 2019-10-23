@@ -72,13 +72,13 @@ steps:
 - script: docker ps
   displayName: docker ps
 
-- task: DotNetCoreCLI@2
-  displayName: 'Tests that need docker infrastructure dotnet test $(buildConfiguration)'
-  timeoutInMinutes: 5
-  inputs:
-    command: 'test'
-    arguments: '-v normal --configuration $(buildConfiguration) --no-build --filter "Category=DynamoDB|Category=EventStore|Category=Kafka|Category=MSSQL|Category=MySql|Category=PostgreSql|Category=RMQ|Category=Redis|Category=Sqlite"'
-    testRunTitle: 'DynamoDB,EventStore,Kafka,MSSQL,MySql,PostgreSql,RMQ,Redis,Sqlite tests running on ubuntu'
+# - task: DotNetCoreCLI@2
+#   displayName: 'Tests that need docker infrastructure dotnet test $(buildConfiguration)'
+#   timeoutInMinutes: 5
+#   inputs:
+#     command: 'test'
+#     arguments: '-v normal --configuration $(buildConfiguration) --no-build --filter "Category=DynamoDB|Category=EventStore|Category=Kafka|Category=MSSQL|Category=MySql|Category=PostgreSql|Category=RMQ|Category=Redis|Category=Sqlite"'
+#     testRunTitle: 'DynamoDB,EventStore,Kafka,MSSQL,MySql,PostgreSql,RMQ,Redis,Sqlite tests running on ubuntu'
 
 - task: PublishBuildArtifacts@1
   inputs:
