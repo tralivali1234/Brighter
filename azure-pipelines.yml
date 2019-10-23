@@ -21,13 +21,14 @@ steps:
 - script: sudo service mysql stop
   displayName: service mysql stop
 
-- task: AWSCLI@1
+- task: AWSPowerShellModuleScript@1
   inputs:
     awsCredentials: 'Brighter SNS Tests'
     regionName: 'eu-west-2'
-    awsCommand: 'configure'
-    awsSubCommand: 'set'
-    awsArguments: 'region eu-west-2 --profile default'
+    scriptType: 'inline'
+    inlineScript: |
+       Set-AWSCredential -AccessKey test -SecretKey test -StoreAs default
+    failOnStderr: true
 
 - task: AWSCLI@1
   inputs:
