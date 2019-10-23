@@ -14,22 +14,20 @@ variables:
   buildConfiguration: 'Release'
   Version.MajorMinor: '9.0'
   Version.Revision: $[counter(variables['Version.MajorMinor'], 0)]
+  Version.SemVer: '$(Version.MajorMinor).$(Version.Revision)'
 
 
 steps:
 - script: sudo service mysql stop
   displayName: service mysql stop
 
-- task: AWSShellScript@1
+- task: AWSCLI@1
   inputs:
     awsCredentials: 'Brighter SNS Tests'
     regionName: 'eu-west-2'
-    scriptType: 'inline'
-    inlineScript: |
-      aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-      aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-      aws configure set region $AWS_DEFAULT_REGION
-    failOnStandardError: true
+    awsCommand: 'configure'
+    awsSubCommand: 'set'
+    awsArguments: 'region eu-west-2'
 
 - task: AWSCLI@1
   inputs:
@@ -44,9 +42,9 @@ steps:
     script: |
       $xml = [xml](Get-Content -Path src\Directory.Build.props)
       $xml.Project.PropertyGroup.AssemblyVersion = '$(Version.MajorMinor).0.0'
-      $xml.Project.PropertyGroup.FileVersion = '$(Version.MajorMinor).$(Version.Revision)'
-      $xml.Project.PropertyGroup.InformationalVersion = '$(Version.MajorMinor).$(Version.Revision)'
-      $xml.Project.PropertyGroup.Version = '$(Version.MajorMinor).$(Version.Revision)'
+      $xml.Project.PropertyGroup.FileVersion = $(Version.SemVer)
+      $xml.Project.PropertyGroup.InformationalVersion = $(Version.SemVer)
+      $xml.Project.PropertyGroup.Version = $(Version.SemVer)
       $xml.Save("src\Directory.Build.props")
     pwsh: true
 
