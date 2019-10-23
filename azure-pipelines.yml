@@ -21,22 +21,6 @@ steps:
 - script: sudo service mysql stop
   displayName: service mysql stop
 
-- task: AWSPowerShellModuleScript@1
-  inputs:
-    awsCredentials: 'Brighter SNS Tests'
-    regionName: 'eu-west-2'
-    scriptType: 'inline'
-    inlineScript: |
-       Set-AWSCredential -AccessKey test -SecretKey test -StoreAs default
-    failOnStderr: true
-
-- task: AWSCLI@1
-  inputs:
-    awsCredentials: 'Brighter SNS Tests'
-    regionName: 'eu-west-2'
-    awsCommand: 'configure'
-    awsSubCommand: 'list'
-
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
@@ -66,14 +50,14 @@ steps:
     arguments: '-v normal --configuration $(buildConfiguration) --no-build --filter "Category!=AWS&Category!=DynamoDB&Category!=EventStore&Category!=Kafka&Category!=MSSQL&Category!=MySql&Category!=PostgreSql&Category!=RESTMS&Category!=RMQ&Category!=Redis&Category!=Sqlite"'
     testRunTitle: 'Fast tests running on ubuntu'
 
-- task: DotNetCoreCLI@2
-  displayName: 'AWS & Sqlite dotnet test $(buildConfiguration)'
-  timeoutInMinutes: 5
-  inputs:
-    command: 'test'
-    arguments: '-v normal --configuration $(buildConfiguration) --no-build --filter "Category=AWS|Category=Sqlite"'
-    testRunTitle: 'AWS & Sqlite tests running on ubuntu'
-
+# - task: DotNetCoreCLI@2
+#   displayName: 'AWS & Sqlite dotnet test $(buildConfiguration)'
+#   timeoutInMinutes: 5
+#   inputs:
+#     command: 'test'
+    # arguments: '-v normal --configuration $(buildConfiguration) --no-build --filter "Category=AWS|Category=Sqlite"'
+    # testRunTitle: 'AWS & Sqlite tests running on ubuntu'
+   
 - task: DockerCompose@0
   displayName: Run services for tests
   timeoutInMinutes: 5
@@ -93,7 +77,7 @@ steps:
   timeoutInMinutes: 5
   inputs:
     command: 'test'
-    arguments: '-v normal --configuration $(buildConfiguration) --no-build --filter "Category=DynamoDB|Category=EventStore|Category=Kafka|Category=MSSQL|Category=MySql|Category=PostgreSql|Category=RMQ|Category=Redis"'
+    arguments: '-v normal --configuration $(buildConfiguration) --no-build --filter "Category=DynamoDB|Category=EventStore|Category=Kafka|Category=MSSQL|Category=MySql|Category=PostgreSql|Category=RMQ|Category=Redis|Category=Sqlite"'
     testRunTitle: 'DynamoDB,EventStore,Kafka,MSSQL,MySql,PostgreSql,RMQ,Redis,Sqlite tests running on ubuntu'
 
 - task: PublishBuildArtifacts@1
