@@ -27,7 +27,7 @@ steps:
     regionName: 'eu-west-2'
     awsCommand: 'configure'
     awsSubCommand: 'set'
-    awsArguments: 'region eu-west-2'
+    awsArguments: 'region eu-west-2 --profile default'
 
 - task: AWSCLI@1
   inputs:
