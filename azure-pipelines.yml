@@ -40,6 +40,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      Write-Host "The semver is - $(Version.SemVer)" 
       $xml = [xml](Get-Content -Path src\Directory.Build.props)
       $xml.Project.PropertyGroup.AssemblyVersion = '$(Version.MajorMinor).0.0'
       $xml.Project.PropertyGroup.FileVersion = $(Version.SemVer)
