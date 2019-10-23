@@ -43,9 +43,9 @@ steps:
       Write-Host "The semver is - $(Version.SemVer)" 
       $xml = [xml](Get-Content -Path src\Directory.Build.props)
       $xml.Project.PropertyGroup.AssemblyVersion = '$(Version.MajorMinor).0.0'
-      $xml.Project.PropertyGroup.FileVersion = $(Version.SemVer)
-      $xml.Project.PropertyGroup.InformationalVersion = $(Version.SemVer)
-      $xml.Project.PropertyGroup.Version = $(Version.SemVer)
+      $xml.Project.PropertyGroup.FileVersion = '$(Version.SemVer)'
+      $xml.Project.PropertyGroup.InformationalVersion = '$(Version.SemVer)''
+      $xml.Project.PropertyGroup.Version = '$(Version.SemVer)'
       $xml.Save("src\Directory.Build.props")
 
       cat src\Directory.Build.props
